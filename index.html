@@ -1,25 +1,575 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head><meta charset="UTF-8"/><title>Carta de Controle · Insta Preto · Junho 2026</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Carta de Controle · Insta Preto · Junho 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0f1117; color:#e2e8f0; font-family:system-ui,-apple-system,sans-serif; padding:28px 20px; }
+  @media(max-width:700px) {
+    .charts-grid { grid-template-columns:1fr !important; }
+    .kpi-flex    { flex-direction:column; }
+  }
+</style>
 </head>
-<body style="margin:0;padding:24px 18px;background:#0f1117;color:#e2e8f0;font-family:system-ui,sans-serif;">
-<div style="max-width:900px;margin:0 auto;">
-<div style="text-align:center;margin-bottom:28px;">
-<div style="display:inline-block;background:#6366f1;color:#fff;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 12px;border-radius:20px;margin-bottom:8px;">Gestão de Tráfego Pago</div>
-<h1 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 4px 0;">Carta de Controle — Junho 2026</h1>
-<p style="color:#8b93a7;font-size:13px;margin:0;">Insta Preto · Rodrigo & Rafael · 08/06/2026</p>
+<body>
+
+<!-- HEADER -->
+<div style="text-align:center;margin-bottom:36px;">
+  <div style="display:inline-block;background:#6366f1;color:#fff;font-size:11px;font-weight:700;
+              letter-spacing:1.5px;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:12px;">
+    Gestão de Tráfego Pago
+  </div>
+  <h1 style="font-size:26px;font-weight:800;color:#fff;margin-bottom:4px;">
+    Carta de Controle — Junho 2026
+  </h1>
+  <p style="color:#8b93a7;font-size:14px;">Insta Preto · Rodrigo &amp; Rafael &nbsp;·&nbsp; Gerado em 08/06/2026</p>
 </div>
-<div style="background:#fffbeb20;border:1px solid #f59e0b44;border-radius:8px;padding:10px 16px;margin-bottom:24px;font-size:11px;color:#d97706;">
-<strong style="color:#fbbf24;">Como ler:</strong> Gráficos exibem Mai+Jun. 🟢 controle · 🟡 atenção · 🔴 ação. UCL/LCL = baseline Maio/2026.
+
+<!-- LEGENDA -->
+<div style="background:#fffbeb20;border:1px solid #f59e0b44;border-radius:8px;
+            padding:12px 18px;margin-bottom:28px;font-size:12px;color:#d97706;">
+  <strong style="color:#fbbf24;">Como ler:</strong> &nbsp;
+  Bandas <span style="color:#f59e0b;font-weight:700;">— — UCL / LCL</span> = limites calculados com Maio/2026 (média ± 1,5σ).
+  Faixa verde = zona de controle.
+  Pontos <span style="color:#6366f1;font-weight:700;">●</span> roxos = dias de Junho.
+  Pontos fora da faixa = sinal de ação necessária.
 </div>
-<div style="margin-bottom:24px;"><div style="background:#6366f1;border-radius:10px 10px 0 0;padding:12px 20px;"><span style="font-size:15px;font-weight:800;color:#fff;">📊 α 01</span><span style="font-size:11px;color:rgba(255,255,255,.65);margin-left:10px;">Meta Ads · 01/06 a 07/06 · 7 dias no mês</span></div><div style="background:#1a1d27;border:1px solid #2e3347;border-top:none;border-radius:0 0 10px 10px;padding:20px;"><div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;"><div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:12px 14px;min-width:100px;flex:1;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:4px;">Total</div><div style="font-size:15px;font-weight:800;color:#fff;">R$47.991,41</div></div><div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:12px 14px;min-width:100px;flex:1;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:4px;">Inv./Dia</div><div style="font-size:15px;font-weight:800;color:#fff;">R$6.855,92</div></div><div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:12px 14px;min-width:100px;flex:1;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:4px;">CPM</div><div style="font-size:15px;font-weight:800;color:#fff;">R$69,62</div></div><div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:12px 14px;min-width:100px;flex:1;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:4px;">CTR</div><div style="font-size:15px;font-weight:800;color:#fff;">0.93%</div></div><div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:12px 14px;min-width:100px;flex:1;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:4px;">CPC</div><div style="font-size:15px;font-weight:800;color:#fff;">R$7,51</div></div><div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:12px 14px;min-width:100px;flex:1;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:4px;">Dias</div><div style="font-size:15px;font-weight:800;color:#fff;">7</div></div></div><p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6b7280;border-left:3px solid #6366f1;padding-left:8px;margin:18px 0 12px 0;">Cartas de Controle — Maio + Junho 2026 (17 dias)</p><div style="margin-bottom:14px;"><p style="font-size:10px;font-weight:700;color:#6b7280;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:.8px;">CPM (R$)</p><div style="background:#0a0d14;border-radius:6px;padding:10px;"><canvas id="c1_a_01" height="70"></canvas><script>new Chart(document.getElementById("c1_a_01"),{type:"line",data:{"labels": ["22/05", "23/05", "24/05", "25/05", "26/05", "27/05", "28/05", "29/05", "30/05", "31/05", "01/06", "02/06", "03/06", "04/06", "05/06", "06/06", "07/06"], "datasets": [{"label": "CPM (R$)", "data": [56.6092, 67.3899, 78.9423, 51.3383, 55.5712, 83.8141, 65.5484, 60.9929, 51.048, 67.6589, 61.074, 62.4855, 69.1961, 65.0768, 78.6082, 91.515, 99.4141], "borderColor": "#6366f1", "backgroundColor": "transparent", "tension": 0.3, "pointBackgroundColor": ["#4ade80", "#fbbf24", "#fbbf24", "#4ade80", "#4ade80", "#f87171", "#4ade80", "#4ade80", "#4ade80", "#fbbf24", "#4ade80", "#4ade80", "#fbbf24", "#4ade80", "#fbbf24", "#f87171", "#f87171"], "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2, "fill": false}, {"label": "UCL", "data": [82.2947, 82.2947, 82.2947, 82.2947, 82.2947, 82.2947, 82.2947, 82.2947, 82.2947, 82.2947, 82.2947, 82.2947, 82.2947, 82.2947, 82.2947, 82.2947, 82.2947], "borderColor": "#ef4444", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "M\u00e9dia", "data": [65.96, 65.96, 65.96, 65.96, 65.96, 65.96, 65.96, 65.96, 65.96, 65.96, 65.96, 65.96, 65.96, 65.96, 65.96, 65.96, 65.96], "borderColor": "#94a3b8", "borderDash": [3, 3], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "LCL", "data": [49.6253, 49.6253, 49.6253, 49.6253, 49.6253, 49.6253, 49.6253, 49.6253, 49.6253, 49.6253, 49.6253, 49.6253, 49.6253, 49.6253, 49.6253, 49.6253, 49.6253], "borderColor": "#22c55e", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}]},options:{responsive:true,interaction:{mode:"index",intersect:false},plugins:{legend:{display:true,labels:{color:"#4b5563",font:{size:8},boxWidth:14}},tooltip:{callbacks:{label:function(c){return c.dataset.label+": "+c.parsed.y.toFixed(2)}}}},scales:{x:{ticks:{color:"#374151",font:{size:8},maxRotation:45},grid:{color:"#111827"}},y:{ticks:{color:"#374151",font:{size:8}},grid:{color:"#111827"}}}}})</script></div></div><div style="margin-bottom:14px;"><p style="font-size:10px;font-weight:700;color:#6b7280;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:.8px;">CTR</p><div style="background:#0a0d14;border-radius:6px;padding:10px;"><canvas id="c2_a_01" height="70"></canvas><script>new Chart(document.getElementById("c2_a_01"),{type:"line",data:{"labels": ["22/05", "23/05", "24/05", "25/05", "26/05", "27/05", "28/05", "29/05", "30/05", "31/05", "01/06", "02/06", "03/06", "04/06", "05/06", "06/06", "07/06"], "datasets": [{"label": "CTR", "data": [0.0084, 0.0098, 0.0073, 0.022, 0.0135, 0.012, 0.0104, 0.0076, 0.0069, 0.0095, 0.0079, 0.0145, 0.0086, 0.0093, 0.0068, 0.006, 0.0074], "borderColor": "#6366f1", "backgroundColor": "transparent", "tension": 0.3, "pointBackgroundColor": ["#fbbf24", "#fbbf24", "#fbbf24", "#4ade80", "#4ade80", "#4ade80", "#fbbf24", "#fbbf24", "#fbbf24", "#fbbf24", "#fbbf24", "#4ade80", "#fbbf24", "#fbbf24", "#fbbf24", "#fbbf24", "#fbbf24"], "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2, "fill": false}, {"label": "UCL", "data": [0.0179, 0.0179, 0.0179, 0.0179, 0.0179, 0.0179, 0.0179, 0.0179, 0.0179, 0.0179, 0.0179, 0.0179, 0.0179, 0.0179, 0.0179, 0.0179, 0.0179], "borderColor": "#ef4444", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "M\u00e9dia", "data": [0.0119, 0.0119, 0.0119, 0.0119, 0.0119, 0.0119, 0.0119, 0.0119, 0.0119, 0.0119, 0.0119, 0.0119, 0.0119, 0.0119, 0.0119, 0.0119, 0.0119], "borderColor": "#94a3b8", "borderDash": [3, 3], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "LCL", "data": [0.0059, 0.0059, 0.0059, 0.0059, 0.0059, 0.0059, 0.0059, 0.0059, 0.0059, 0.0059, 0.0059, 0.0059, 0.0059, 0.0059, 0.0059, 0.0059, 0.0059], "borderColor": "#22c55e", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}]},options:{responsive:true,interaction:{mode:"index",intersect:false},plugins:{legend:{display:true,labels:{color:"#4b5563",font:{size:8},boxWidth:14}},tooltip:{callbacks:{label:function(c){return c.dataset.label+": "+c.parsed.y.toFixed(2)}}}},scales:{x:{ticks:{color:"#374151",font:{size:8},maxRotation:45},grid:{color:"#111827"}},y:{ticks:{color:"#374151",font:{size:8}},grid:{color:"#111827"}}}}})</script></div></div><div style="margin-bottom:14px;"><p style="font-size:10px;font-weight:700;color:#6b7280;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:.8px;">CPC Link (R$)</p><div style="background:#0a0d14;border-radius:6px;padding:10px;"><canvas id="c3_a_01" height="70"></canvas><script>new Chart(document.getElementById("c3_a_01"),{type:"line",data:{"labels": ["22/05", "23/05", "24/05", "25/05", "26/05", "27/05", "28/05", "29/05", "30/05", "31/05", "01/06", "02/06", "03/06", "04/06", "05/06", "06/06", "07/06"], "datasets": [{"label": "CPC Link (R$)", "data": [6.7522, 6.8698, 10.8584, 2.3387, 4.1147, 6.9746, 6.2988, 7.9892, 7.3804, 7.1259, 7.7413, 4.3024, 8.0672, 7.0307, 11.5085, 15.3634, 13.4842], "borderColor": "#6366f1", "backgroundColor": "transparent", "tension": 0.3, "pointBackgroundColor": ["#fbbf24", "#fbbf24", "#f87171", "#4ade80", "#4ade80", "#fbbf24", "#fbbf24", "#fbbf24", "#fbbf24", "#fbbf24", "#fbbf24", "#4ade80", "#fbbf24", "#fbbf24", "#f87171", "#f87171", "#f87171"], "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2, "fill": false}, {"label": "UCL", "data": [8.6319, 8.6319, 8.6319, 8.6319, 8.6319, 8.6319, 8.6319, 8.6319, 8.6319, 8.6319, 8.6319, 8.6319, 8.6319, 8.6319, 8.6319, 8.6319, 8.6319], "borderColor": "#ef4444", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "M\u00e9dia", "data": [6.052, 6.052, 6.052, 6.052, 6.052, 6.052, 6.052, 6.052, 6.052, 6.052, 6.052, 6.052, 6.052, 6.052, 6.052, 6.052, 6.052], "borderColor": "#94a3b8", "borderDash": [3, 3], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "LCL", "data": [3.4721, 3.4721, 3.4721, 3.4721, 3.4721, 3.4721, 3.4721, 3.4721, 3.4721, 3.4721, 3.4721, 3.4721, 3.4721, 3.4721, 3.4721, 3.4721, 3.4721], "borderColor": "#22c55e", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}]},options:{responsive:true,interaction:{mode:"index",intersect:false},plugins:{legend:{display:true,labels:{color:"#4b5563",font:{size:8},boxWidth:14}},tooltip:{callbacks:{label:function(c){return c.dataset.label+": "+c.parsed.y.toFixed(2)}}}},scales:{x:{ticks:{color:"#374151",font:{size:8},maxRotation:45},grid:{color:"#111827"}},y:{ticks:{color:"#374151",font:{size:8}},grid:{color:"#111827"}}}}})</script></div></div><div style="margin-bottom:14px;"><p style="font-size:10px;font-weight:700;color:#6b7280;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:.8px;">Invest. Diário (R$)</p><div style="background:#0a0d14;border-radius:6px;padding:10px;"><canvas id="c4_a_01" height="70"></canvas><script>new Chart(document.getElementById("c4_a_01"),{type:"line",data:{"labels": ["22/05", "23/05", "24/05", "25/05", "26/05", "27/05", "28/05", "29/05", "30/05", "31/05", "01/06", "02/06", "03/06", "04/06", "05/06", "06/06", "07/06"], "datasets": [{"label": "Invest. Di\u00e1rio (R$)", "data": [364.62, 700.72, 336.61, 1159.99, 6929.12, 4993.81, 4875.29, 5752.24, 3682.81, 5501.21, 5086.06, 7563.62, 6639.3, 14356.6, 7388.46, 5177.46, 1779.91], "borderColor": "#6366f1", "backgroundColor": "transparent", "tension": 0.3, "pointBackgroundColor": ["#fbbf24", "#fbbf24", "#fbbf24", "#fbbf24", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#fbbf24", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#fbbf24"], "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2, "fill": false}, {"label": "UCL", "data": [8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868, 8311.3868], "borderColor": "#ef4444", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "M\u00e9dia", "data": [4207.649, 4207.649, 4207.649, 4207.649, 4207.649, 4207.649, 4207.649, 4207.649, 4207.649, 4207.649, 4207.649, 4207.649, 4207.649, 4207.649, 4207.649, 4207.649, 4207.649], "borderColor": "#94a3b8", "borderDash": [3, 3], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "LCL", "data": [103.9112, 103.9112, 103.9112, 103.9112, 103.9112, 103.9112, 103.9112, 103.9112, 103.9112, 103.9112, 103.9112, 103.9112, 103.9112, 103.9112, 103.9112, 103.9112, 103.9112], "borderColor": "#22c55e", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}]},options:{responsive:true,interaction:{mode:"index",intersect:false},plugins:{legend:{display:true,labels:{color:"#4b5563",font:{size:8},boxWidth:14}},tooltip:{callbacks:{label:function(c){return c.dataset.label+": "+c.parsed.y.toFixed(2)}}}},scales:{x:{ticks:{color:"#374151",font:{size:8},maxRotation:45},grid:{color:"#111827"}},y:{ticks:{color:"#374151",font:{size:8}},grid:{color:"#111827"}}}}})</script></div></div><p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6b7280;border-left:3px solid #6366f1;padding-left:8px;margin:18px 0 12px 0;">Resumo Mês Atual vs Limites</p><div style="overflow-x:auto;"><table style="border-collapse:collapse;width:100%;min-width:560px;"><thead><tr style="background:#242838;"><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #6366f1;">KPI</th><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #6366f1;">Meta</th><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #6366f1;">LCL</th><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #6366f1;">Média</th><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #6366f1;">UCL</th><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #6366f1;">Atual</th><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #6366f1;">Status</th></tr></thead><tbody><tr><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">CPM</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↓ menor melhor</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$49,63 <small>(10d)</small></td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">R$65,96</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$82,29</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#fff;">R$69,62</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;"><span style="display:inline-block;background:#451a03;color:#fbbf24;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">⚠️ Atenção</span></td></tr><tr><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">CTR</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↑ maior melhor</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">0.59% <small>(10d)</small></td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">1.19%</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">1.79%</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#fff;">0.93%</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;"><span style="display:inline-block;background:#451a03;color:#fbbf24;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">⚠️ Atenção</span></td></tr><tr><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">CPC Link</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↓ menor melhor</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$3,47 <small>(10d)</small></td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">R$6,05</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$8,63</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#fff;">R$7,51</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;"><span style="display:inline-block;background:#451a03;color:#fbbf24;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">⚠️ Atenção</span></td></tr><tr><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">Invest/Dia</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↑ maior melhor</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$103,91 <small>(10d)</small></td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">R$4.207,65</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$8.311,39</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#fff;">R$6.855,92</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;"><span style="display:inline-block;background:#14532d;color:#4ade80;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">✅ Dentro do controle</span></td></tr></tbody></table></div></div></div><div style="margin-bottom:24px;"><div style="background:#0891b2;border-radius:10px 10px 0 0;padding:12px 20px;"><span style="font-size:15px;font-weight:800;color:#fff;">📊 Outlet Cachoeirinha</span><span style="font-size:11px;color:rgba(255,255,255,.65);margin-left:10px;">Meta Ads · 01/06 a 03/06 · 3 dias no mês</span></div><div style="background:#1a1d27;border:1px solid #2e3347;border-top:none;border-radius:0 0 10px 10px;padding:20px;"><div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;"><div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:12px 14px;min-width:100px;flex:1;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:4px;">Total</div><div style="font-size:15px;font-weight:800;color:#fff;">R$1.647,15</div></div><div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:12px 14px;min-width:100px;flex:1;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:4px;">Inv./Dia</div><div style="font-size:15px;font-weight:800;color:#fff;">R$549,05</div></div><div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:12px 14px;min-width:100px;flex:1;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:4px;">CPM</div><div style="font-size:15px;font-weight:800;color:#fff;">R$44,45</div></div><div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:12px 14px;min-width:100px;flex:1;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:4px;">CTR</div><div style="font-size:15px;font-weight:800;color:#fff;">1.50%</div></div><div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:12px 14px;min-width:100px;flex:1;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:4px;">CPC</div><div style="font-size:15px;font-weight:800;color:#fff;">R$2,97</div></div><div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:12px 14px;min-width:100px;flex:1;text-align:center;"><div style="font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:4px;">Dias</div><div style="font-size:15px;font-weight:800;color:#fff;">3</div></div></div><p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6b7280;border-left:3px solid #0891b2;padding-left:8px;margin:18px 0 12px 0;">Cartas de Controle — Maio + Junho 2026 (15 dias)</p><div style="margin-bottom:14px;"><p style="font-size:10px;font-weight:700;color:#6b7280;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:.8px;">CPM (R$)</p><div style="background:#0a0d14;border-radius:6px;padding:10px;"><canvas id="c1_Outlet_Cachoeirinha" height="70"></canvas><script>new Chart(document.getElementById("c1_Outlet_Cachoeirinha"),{type:"line",data:{"labels": ["04/05", "05/05", "22/05", "23/05", "24/05", "25/05", "26/05", "27/05", "28/05", "29/05", "30/05", "31/05", "01/06", "02/06", "03/06"], "datasets": [{"label": "CPM (R$)", "data": [16.1569, 21.504, 67.9852, 69.217, 89.0496, 59.745, 49.8853, 85.6293, 91.3402, 82.4403, 77.5727, 72.2693, 61.4266, 41.9874, 38.115], "borderColor": "#0891b2", "backgroundColor": "transparent", "tension": 0.3, "pointBackgroundColor": ["#4ade80", "#fbbf24", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171"], "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2, "fill": false}, {"label": "UCL", "data": [24.17, 24.17, 24.17, 24.17, 24.17, 24.17, 24.17, 24.17, 24.17, 24.17, 24.17, 24.17, 24.17, 24.17, 24.17], "borderColor": "#ef4444", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "M\u00e9dia", "data": [18.83, 18.83, 18.83, 18.83, 18.83, 18.83, 18.83, 18.83, 18.83, 18.83, 18.83, 18.83, 18.83, 18.83, 18.83], "borderColor": "#94a3b8", "borderDash": [3, 3], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "LCL", "data": [13.49, 13.49, 13.49, 13.49, 13.49, 13.49, 13.49, 13.49, 13.49, 13.49, 13.49, 13.49, 13.49, 13.49, 13.49], "borderColor": "#22c55e", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}]},options:{responsive:true,interaction:{mode:"index",intersect:false},plugins:{legend:{display:true,labels:{color:"#4b5563",font:{size:8},boxWidth:14}},tooltip:{callbacks:{label:function(c){return c.dataset.label+": "+c.parsed.y.toFixed(2)}}}},scales:{x:{ticks:{color:"#374151",font:{size:8},maxRotation:45},grid:{color:"#111827"}},y:{ticks:{color:"#374151",font:{size:8}},grid:{color:"#111827"}}}}})</script></div></div><div style="margin-bottom:14px;"><p style="font-size:10px;font-weight:700;color:#6b7280;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:.8px;">CTR</p><div style="background:#0a0d14;border-radius:6px;padding:10px;"><canvas id="c2_Outlet_Cachoeirinha" height="70"></canvas><script>new Chart(document.getElementById("c2_Outlet_Cachoeirinha"),{type:"line",data:{"labels": ["04/05", "05/05", "22/05", "23/05", "24/05", "25/05", "26/05", "27/05", "28/05", "29/05", "30/05", "31/05", "01/06", "02/06", "03/06"], "datasets": [{"label": "CTR", "data": [0.0124, 0.0132, 0.01, 0.0117, 0.0124, 0.0151, 0.0183, 0.0341, 0.0248, 0.0135, 0.0093, 0.0134, 0.0209, 0.0125, 0.0152], "borderColor": "#0891b2", "backgroundColor": "transparent", "tension": 0.3, "pointBackgroundColor": ["#fbbf24", "#4ade80", "#f87171", "#f87171", "#fbbf24", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#f87171", "#4ade80", "#4ade80", "#fbbf24", "#4ade80"], "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2, "fill": false}, {"label": "UCL", "data": [0.0136, 0.0136, 0.0136, 0.0136, 0.0136, 0.0136, 0.0136, 0.0136, 0.0136, 0.0136, 0.0136, 0.0136, 0.0136, 0.0136, 0.0136], "borderColor": "#ef4444", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "M\u00e9dia", "data": [0.0128, 0.0128, 0.0128, 0.0128, 0.0128, 0.0128, 0.0128, 0.0128, 0.0128, 0.0128, 0.0128, 0.0128, 0.0128, 0.0128, 0.0128], "borderColor": "#94a3b8", "borderDash": [3, 3], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "LCL", "data": [0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012], "borderColor": "#22c55e", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}]},options:{responsive:true,interaction:{mode:"index",intersect:false},plugins:{legend:{display:true,labels:{color:"#4b5563",font:{size:8},boxWidth:14}},tooltip:{callbacks:{label:function(c){return c.dataset.label+": "+c.parsed.y.toFixed(2)}}}},scales:{x:{ticks:{color:"#374151",font:{size:8},maxRotation:45},grid:{color:"#111827"}},y:{ticks:{color:"#374151",font:{size:8}},grid:{color:"#111827"}}}}})</script></div></div><div style="margin-bottom:14px;"><p style="font-size:10px;font-weight:700;color:#6b7280;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:.8px;">CPC Link (R$)</p><div style="background:#0a0d14;border-radius:6px;padding:10px;"><canvas id="c3_Outlet_Cachoeirinha" height="70"></canvas><script>new Chart(document.getElementById("c3_Outlet_Cachoeirinha"),{type:"line",data:{"labels": ["04/05", "05/05", "22/05", "23/05", "24/05", "25/05", "26/05", "27/05", "28/05", "29/05", "30/05", "31/05", "01/06", "02/06", "03/06"], "datasets": [{"label": "CPC Link (R$)", "data": [1.3078, 1.6296, 6.7704, 5.9151, 7.2093, 3.9586, 2.725, 2.5087, 3.6841, 6.0849, 8.341, 5.3915, 2.9385, 3.3577, 2.5097], "borderColor": "#0891b2", "backgroundColor": "transparent", "tension": 0.3, "pointBackgroundColor": ["#4ade80", "#fbbf24", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171", "#f87171"], "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2, "fill": false}, {"label": "UCL", "data": [1.79, 1.79, 1.79, 1.79, 1.79, 1.79, 1.79, 1.79, 1.79, 1.79, 1.79, 1.79, 1.79, 1.79, 1.79], "borderColor": "#ef4444", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "M\u00e9dia", "data": [1.47, 1.47, 1.47, 1.47, 1.47, 1.47, 1.47, 1.47, 1.47, 1.47, 1.47, 1.47, 1.47, 1.47, 1.47], "borderColor": "#94a3b8", "borderDash": [3, 3], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "LCL", "data": [1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15], "borderColor": "#22c55e", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}]},options:{responsive:true,interaction:{mode:"index",intersect:false},plugins:{legend:{display:true,labels:{color:"#4b5563",font:{size:8},boxWidth:14}},tooltip:{callbacks:{label:function(c){return c.dataset.label+": "+c.parsed.y.toFixed(2)}}}},scales:{x:{ticks:{color:"#374151",font:{size:8},maxRotation:45},grid:{color:"#111827"}},y:{ticks:{color:"#374151",font:{size:8}},grid:{color:"#111827"}}}}})</script></div></div><div style="margin-bottom:14px;"><p style="font-size:10px;font-weight:700;color:#6b7280;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:.8px;">Invest. Diário (R$)</p><div style="background:#0a0d14;border-radius:6px;padding:10px;"><canvas id="c4_Outlet_Cachoeirinha" height="70"></canvas><script>new Chart(document.getElementById("c4_Outlet_Cachoeirinha"),{type:"line",data:{"labels": ["04/05", "05/05", "22/05", "23/05", "24/05", "25/05", "26/05", "27/05", "28/05", "29/05", "30/05", "31/05", "01/06", "02/06", "03/06"], "datasets": [{"label": "Invest. Di\u00e1rio (R$)", "data": [134.7, 110.81, 311.44, 632.92, 519.07, 229.6, 1408.81, 1299.51, 817.86, 1052.68, 667.28, 841.07, 434.9, 755.48, 456.77], "borderColor": "#0891b2", "backgroundColor": "transparent", "tension": 0.3, "pointBackgroundColor": ["#4ade80", "#fbbf24", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80", "#4ade80"], "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2, "fill": false}, {"label": "UCL", "data": [146.645, 146.645, 146.645, 146.645, 146.645, 146.645, 146.645, 146.645, 146.645, 146.645, 146.645, 146.645, 146.645, 146.645, 146.645], "borderColor": "#ef4444", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "M\u00e9dia", "data": [122.755, 122.755, 122.755, 122.755, 122.755, 122.755, 122.755, 122.755, 122.755, 122.755, 122.755, 122.755, 122.755, 122.755, 122.755], "borderColor": "#94a3b8", "borderDash": [3, 3], "pointRadius": 0, "borderWidth": 1.5, "fill": false}, {"label": "LCL", "data": [98.865, 98.865, 98.865, 98.865, 98.865, 98.865, 98.865, 98.865, 98.865, 98.865, 98.865, 98.865, 98.865, 98.865, 98.865], "borderColor": "#22c55e", "borderDash": [6, 4], "pointRadius": 0, "borderWidth": 1.5, "fill": false}]},options:{responsive:true,interaction:{mode:"index",intersect:false},plugins:{legend:{display:true,labels:{color:"#4b5563",font:{size:8},boxWidth:14}},tooltip:{callbacks:{label:function(c){return c.dataset.label+": "+c.parsed.y.toFixed(2)}}}},scales:{x:{ticks:{color:"#374151",font:{size:8},maxRotation:45},grid:{color:"#111827"}},y:{ticks:{color:"#374151",font:{size:8}},grid:{color:"#111827"}}}}})</script></div></div><p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6b7280;border-left:3px solid #0891b2;padding-left:8px;margin:18px 0 12px 0;">Resumo Mês Atual vs Limites</p><div style="overflow-x:auto;"><table style="border-collapse:collapse;width:100%;min-width:560px;"><thead><tr style="background:#242838;"><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #0891b2;">KPI</th><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #0891b2;">Meta</th><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #0891b2;">LCL</th><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #0891b2;">Média</th><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #0891b2;">UCL</th><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #0891b2;">Atual</th><th style="padding:8px 12px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;color:#6b7280;border-bottom:2px solid #0891b2;">Status</th></tr></thead><tbody><tr><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">CPM</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↓ menor melhor</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$13,49 <small>(2d)</small></td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">R$18,83</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$24,17</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#fff;">R$44,45</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;"><span style="display:inline-block;background:#450a0a;color:#f87171;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">🔴 Fora de controle</span></td></tr><tr><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">CTR</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↑ maior melhor</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">1.20% <small>(2d)</small></td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">1.28%</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">1.36%</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#fff;">1.50%</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;"><span style="display:inline-block;background:#14532d;color:#4ade80;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">✅ Dentro do controle</span></td></tr><tr><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">CPC Link</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↓ menor melhor</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$1,15 <small>(2d)</small></td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">R$1,47</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$1,79</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#fff;">R$2,97</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;"><span style="display:inline-block;background:#450a0a;color:#f87171;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">🔴 Fora de controle</span></td></tr><tr><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">Invest/Dia</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↑ maior melhor</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$98,87 <small>(2d)</small></td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">R$122,75</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$146,64</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#fff;">R$549,05</td><td style="padding:10px 14px;border-bottom:1px solid #2e3347;"><span style="display:inline-block;background:#14532d;color:#4ade80;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">✅ Dentro do controle</span></td></tr></tbody></table></div></div></div>
-<div style="background:#1a1d27;border:1px solid #2e3347;border-radius:10px;padding:16px;margin-bottom:24px;">
-<div style="color:#9ca3af;font-size:12px;">⚠️ <strong style="color:#f87171;">Endreus Felipe</strong> — Conta encerrada. Sem dados em Junho 2026.</div>
+
+<!-- CONTAS -->
+<div style="margin-bottom:36px;">
+  <div style="background:#6366f1;border-radius:10px 10px 0 0;padding:14px 22px;display:flex;align-items:center;gap:12px;">
+    <span style="font-size:17px;font-weight:800;color:#fff;">📊 α 01</span>
+    <span style="font-size:12px;color:rgba(255,255,255,.65);">Meta Ads · 01/06 a 04/06 · 4 dias ativos</span>
+  </div>
+  <div style="background:#1a1d27;border:1px solid #2e3347;border-top:none;border-radius:0 0 10px 10px;padding:24px;">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;">
+  <div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:16px 18px;min-width:130px;flex:1;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">Total Investido</div>
+  <div style="font-size:20px;font-weight:800;color:#e2e8f0;">R$22.729,71</div>
+  
 </div>
-<div style="text-align:center;color:#4b5563;font-size:10px;padding-top:14px;border-top:1px solid #1f2937;">
-Dados via Meta Ads + Supermetrics · Insta Preto · 08/06/2026
+  <div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:16px 18px;min-width:130px;flex:1;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">Invest./Dia</div>
+  <div style="font-size:20px;font-weight:800;color:#4ade80;">R$5.682,43</div>
+  <div style="font-size:12px;margin-top:4px;">✅</div>
+</div>
+  <div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:16px 18px;min-width:130px;flex:1;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">CPM</div>
+  <div style="font-size:20px;font-weight:800;color:#4ade80;">R$65,37</div>
+  <div style="font-size:12px;margin-top:4px;">✅</div>
+</div>
+  <div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:16px 18px;min-width:130px;flex:1;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">CTR</div>
+  <div style="font-size:20px;font-weight:800;color:#fbbf24;">1.03%</div>
+  <div style="font-size:12px;margin-top:4px;">⚠️</div>
+</div>
+  <div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:16px 18px;min-width:130px;flex:1;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">CPC Link</div>
+  <div style="font-size:20px;font-weight:800;color:#fbbf24;">R$6,33</div>
+  <div style="font-size:12px;margin-top:4px;">⚠️</div>
+</div>
+  <div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:16px 18px;min-width:130px;flex:1;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">Dias Ativos</div>
+  <div style="font-size:20px;font-weight:800;color:#e2e8f0;">4</div>
+  
 </div>
 </div>
+<p style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8b93a7;
+          border-left:3px solid #6366f1;padding-left:10px;margin:0 0 14px 0;">
+  Carta de Controle — Baseline: Maio 2026 (10 dias)
+</p>
+<div style="overflow-x:auto;margin-bottom:28px;">
+<table style="border-collapse:collapse;width:100%;font-family:system-ui,sans-serif;min-width:620px;">
+<thead>
+<tr style="background:#242838;">
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">KPI</th>
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">Meta</th>
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">LCL</th>
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">Média Hist.</th>
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">UCL</th>
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">Valor Atual</th>
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">CPM</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↓ menor melhor</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$49,63<br><span style="font-size:10px;color:#4b5563;">10 dias</span></td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">R$65,96</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$82,30</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#ffffff;">R$65,37</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;">
+  <span style="display:inline-block;background:#14532d;color:#4ade80;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">✅ Dentro do controle</span>
+</td>
+</tr><tr>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">CTR</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↑ maior melhor</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">0.59%<br><span style="font-size:10px;color:#4b5563;">10 dias</span></td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">1.19%</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">1.79%</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#ffffff;">1.03%</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;">
+  <span style="display:inline-block;background:#451a03;color:#fbbf24;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">⚠️ Atenção</span>
+</td>
+</tr><tr>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">CPC Link</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↓ menor melhor</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$3,47<br><span style="font-size:10px;color:#4b5563;">10 dias</span></td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">R$6,05</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$8,63</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#ffffff;">R$6,33</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;">
+  <span style="display:inline-block;background:#451a03;color:#fbbf24;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">⚠️ Atenção</span>
+</td>
+</tr><tr>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">Invest/Dia</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↑ maior melhor</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$103,91<br><span style="font-size:10px;color:#4b5563;">10 dias</span></td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">R$4.207,65</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$8.311,39</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#ffffff;">R$5.682,43</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;">
+  <span style="display:inline-block;background:#14532d;color:#4ade80;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">✅ Dentro do controle</span>
+</td>
+</tr></tbody>
+</table>
+</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;">
+<div style="background:#1a1d27;border:1px solid #2e3347;border-radius:12px;padding:22px;">
+  <p style="font-size:13px;font-weight:700;color:#e2e8f0;margin:0 0 16px 0;">📡 CPM ao longo do tempo</p>
+  <div style="position:relative;height:210px;"><canvas id="acc0_cpm"></canvas></div>
+</div><div style="background:#1a1d27;border:1px solid #2e3347;border-radius:12px;padding:22px;">
+  <p style="font-size:13px;font-weight:700;color:#e2e8f0;margin:0 0 16px 0;">🖱️ CTR ao longo do tempo</p>
+  <div style="position:relative;height:210px;"><canvas id="acc0_ctr"></canvas></div>
+</div><div style="background:#1a1d27;border:1px solid #2e3347;border-radius:12px;padding:22px;">
+  <p style="font-size:13px;font-weight:700;color:#e2e8f0;margin:0 0 16px 0;">🔗 CPC Link ao longo do tempo</p>
+  <div style="position:relative;height:210px;"><canvas id="acc0_cpc"></canvas></div>
+</div><div style="background:#1a1d27;border:1px solid #2e3347;border-radius:12px;padding:22px;">
+  <p style="font-size:13px;font-weight:700;color:#e2e8f0;margin:0 0 16px 0;">💸 Investimento/Dia ao longo do tempo</p>
+  <div style="position:relative;height:210px;"><canvas id="acc0_invest"></canvas></div>
+</div>
+</div>
+  </div>
+</div><div style="margin-bottom:36px;">
+  <div style="background:#0891b2;border-radius:10px 10px 0 0;padding:14px 22px;display:flex;align-items:center;gap:12px;">
+    <span style="font-size:17px;font-weight:800;color:#fff;">📊 Outlet Cachoeirinha</span>
+    <span style="font-size:12px;color:rgba(255,255,255,.65);">Meta Ads · 01/06 a 03/06 · 3 dias ativos</span>
+  </div>
+  <div style="background:#1a1d27;border:1px solid #2e3347;border-top:none;border-radius:0 0 10px 10px;padding:24px;">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;">
+  <div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:16px 18px;min-width:130px;flex:1;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">Total Investido</div>
+  <div style="font-size:20px;font-weight:800;color:#e2e8f0;">R$1.647,08</div>
+  
+</div>
+  <div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:16px 18px;min-width:130px;flex:1;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">Invest./Dia</div>
+  <div style="font-size:20px;font-weight:800;color:#4ade80;">R$549,03</div>
+  <div style="font-size:12px;margin-top:4px;">✅</div>
+</div>
+  <div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:16px 18px;min-width:130px;flex:1;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">CPM</div>
+  <div style="font-size:20px;font-weight:800;color:#f87171;">R$44,45</div>
+  <div style="font-size:12px;margin-top:4px;">🔴</div>
+</div>
+  <div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:16px 18px;min-width:130px;flex:1;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">CTR</div>
+  <div style="font-size:20px;font-weight:800;color:#4ade80;">1.50%</div>
+  <div style="font-size:12px;margin-top:4px;">✅</div>
+</div>
+  <div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:16px 18px;min-width:130px;flex:1;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">CPC Link</div>
+  <div style="font-size:20px;font-weight:800;color:#f87171;">R$2,97</div>
+  <div style="font-size:12px;margin-top:4px;">🔴</div>
+</div>
+  <div style="background:#242838;border:1px solid #2e3347;border-radius:10px;padding:16px 18px;min-width:130px;flex:1;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">Dias Ativos</div>
+  <div style="font-size:20px;font-weight:800;color:#e2e8f0;">3</div>
+  
+</div>
+</div>
+<p style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8b93a7;
+          border-left:3px solid #0891b2;padding-left:10px;margin:0 0 14px 0;">
+  Carta de Controle — Baseline: Maio 2026 (2 dias)
+</p>
+<div style="overflow-x:auto;margin-bottom:28px;">
+<table style="border-collapse:collapse;width:100%;font-family:system-ui,sans-serif;min-width:620px;">
+<thead>
+<tr style="background:#242838;">
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">KPI</th>
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">Meta</th>
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">LCL</th>
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">Média Hist.</th>
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">UCL</th>
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">Valor Atual</th>
+  <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;border-bottom:2px solid #6366f1;">Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">CPM</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↓ menor melhor</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$13,18<br><span style="font-size:10px;color:#4b5563;">⚠ limitado (2d)</span></td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">R$18,83</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$24,48</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#ffffff;">R$44,45</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;">
+  <span style="display:inline-block;background:#450a0a;color:#f87171;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">🔴 Fora de controle</span>
+</td>
+</tr><tr>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">CTR</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↑ maior melhor</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">0.89%<br><span style="font-size:10px;color:#4b5563;">⚠ limitado (2d)</span></td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">1.28%</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">1.66%</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#ffffff;">1.50%</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;">
+  <span style="display:inline-block;background:#14532d;color:#4ade80;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">✅ Dentro do controle</span>
+</td>
+</tr><tr>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">CPC Link</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↓ menor melhor</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$1,03<br><span style="font-size:10px;color:#4b5563;">⚠ limitado (2d)</span></td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">R$1,47</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$1,91</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#ffffff;">R$2,97</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;">
+  <span style="display:inline-block;background:#450a0a;color:#f87171;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">🔴 Fora de controle</span>
+</td>
+</tr><tr>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-weight:700;font-size:13px;color:#e2e8f0;">Invest/Dia</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:11px;color:#6b7280;">↑ maior melhor</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$85,93<br><span style="font-size:10px;color:#4b5563;">⚠ limitado (2d)</span></td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#cbd5e1;">R$122,75</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:12px;color:#8b93a7;">R$159,58</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;font-size:16px;font-weight:800;color:#ffffff;">R$549,03</td>
+<td style="padding:10px 14px;border-bottom:1px solid #2e3347;">
+  <span style="display:inline-block;background:#14532d;color:#4ade80;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">✅ Dentro do controle</span>
+</td>
+</tr></tbody>
+</table>
+</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;">
+<div style="background:#1a1d27;border:1px solid #2e3347;border-radius:12px;padding:22px;">
+  <p style="font-size:13px;font-weight:700;color:#e2e8f0;margin:0 0 16px 0;">📡 CPM ao longo do tempo</p>
+  <div style="position:relative;height:210px;"><canvas id="acc1_cpm"></canvas></div>
+</div><div style="background:#1a1d27;border:1px solid #2e3347;border-radius:12px;padding:22px;">
+  <p style="font-size:13px;font-weight:700;color:#e2e8f0;margin:0 0 16px 0;">🖱️ CTR ao longo do tempo</p>
+  <div style="position:relative;height:210px;"><canvas id="acc1_ctr"></canvas></div>
+</div><div style="background:#1a1d27;border:1px solid #2e3347;border-radius:12px;padding:22px;">
+  <p style="font-size:13px;font-weight:700;color:#e2e8f0;margin:0 0 16px 0;">🔗 CPC Link ao longo do tempo</p>
+  <div style="position:relative;height:210px;"><canvas id="acc1_cpc"></canvas></div>
+</div><div style="background:#1a1d27;border:1px solid #2e3347;border-radius:12px;padding:22px;">
+  <p style="font-size:13px;font-weight:700;color:#e2e8f0;margin:0 0 16px 0;">💸 Investimento/Dia ao longo do tempo</p>
+  <div style="position:relative;height:210px;"><canvas id="acc1_invest"></canvas></div>
+</div>
+</div>
+  </div>
+</div>
+
+<!-- ENDREUS FELIPE (inativo) -->
+<div style="margin-bottom:36px;">
+  <div style="background:#374151;border-radius:10px 10px 0 0;padding:14px 22px;">
+    <span style="font-size:17px;font-weight:800;color:#fff;">📊 Endreus Felipe</span>
+    <span style="font-size:12px;color:rgba(255,255,255,.5);margin-left:12px;">Meta Ads · Sem dados em Junho</span>
+  </div>
+  <div style="background:#1a1d27;border:1px solid #2e3347;border-top:none;border-radius:0 0 10px 10px;padding:20px;">
+    <div style="background:#450a0a33;border:1px solid #7f1d1d55;border-radius:8px;padding:14px 18px;color:#fca5a5;font-size:13px;">
+      ⚠️ <strong>Conta encerrada na Meta.</strong> Nenhum dado encontrado para Junho 2026.
+      Histórico: Abril/2026 investiu <strong>R$ 56.695,47</strong> (Tráfego + CRM).
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center;color:#4b5563;font-size:11px;margin-top:20px;padding-top:20px;
+            border-top:1px solid #1f2937;">
+  Dados via Meta Ads + Supermetrics &nbsp;·&nbsp; Insta Preto — Rodrigo &amp; Rafael &nbsp;·&nbsp; 08/06/2026
+</div>
+
+<script>
+// Charts — α 01
+const fmtBrl0  = v => 'R$' + v.toFixed(2);
+const fmtPct0  = v => v.toFixed(2)+'%';
+const fmtBrl00 = v => 'R$' + Math.round(v).toLocaleString('pt-BR');
+new Chart(document.getElementById('acc0_cpm'), {
+  type:'line',
+  data:{
+    labels:["22/05", "23/05", "24/05", "25/05", "26/05", "27/05", "28/05", "29/05", "30/05", "31/05", "01/06", "02/06", "03/06", "04/06"],
+    datasets:[
+      
+    { label:'UCL',   data:Array(14).fill(82.2952),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+    { label:'Média', data:Array(14).fill(65.9606), borderColor:'#6b7280', borderDash:[3,3], borderWidth:1,   pointRadius:0, fill:false },
+    { label:'LCL',   data:Array(14).fill(49.6261),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+      {
+      label: 'CPM (R$)',
+      data: [61.3373253493014, 68.2448060587453, 84.7795501832953, 52.5603298282775, 54.5212188583012, 84.1825624013483, 68.3194326104958, 63.5504627424612, 53.8737522601739, 68.2368067136479, 61.07400602807499, 62.48671959551564, 69.20121830376236, 72.51010101010101],
+      borderColor: '#22d3ee',
+      borderWidth: 2,
+      pointBackgroundColor: ["#22d3ee99","#22d3ee99","#22d3ee99","#22d3ee99","#22d3ee99","#22d3ee99","#22d3ee99","#22d3ee99","#22d3ee99","#22d3ee99","#6366f1","#6366f1","#6366f1","#6366f1"],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 8],
+      tension: 0.35, fill: false, spanGaps: true
+    }
+    ]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{ labels:{ color:'#8b93a7', font:{size:11}, boxWidth:14, padding:16 } },
+      tooltip:{ backgroundColor:'#1a1d27', borderColor:'#2e3347', borderWidth:1,
+                callbacks:{ label: ctx => fmtBrl0(ctx.raw) } }
+    },
+    scales:{
+      x:{ ticks:{ color:'#8b93a7', font:{size:10} }, grid:{ color:'#2e3347' } },
+      y:{ ticks:{ color:'#8b93a7', font:{size:10}, callback: v => fmtBrl0(v) },
+           grid:{ color:'#2e3347' } }
+    }
+  }
+});
+new Chart(document.getElementById('acc0_ctr'), {
+  type:'line',
+  data:{
+    labels:["22/05", "23/05", "24/05", "25/05", "26/05", "27/05", "28/05", "29/05", "30/05", "31/05", "01/06", "02/06", "03/06", "04/06"],
+    datasets:[
+      
+    { label:'UCL',   data:Array(14).fill(1.7936),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+    { label:'Média', data:Array(14).fill(1.1927), borderColor:'#6b7280', borderDash:[3,3], borderWidth:1,   pointRadius:0, fill:false },
+    { label:'LCL',   data:Array(14).fill(0.5919),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+      {
+      label: 'CTR (%)',
+      data: [0.907276356378153, 1.06949135195988, 1.0205092638462299, 2.09546864361903, 1.43922055842542, 1.6506594611947902, 1.19526215363199, 0.8339637090372529, 0.717063383944716, 0.998439937597504, 0.7889333189235924, 1.452376428211462, 0.8574021341177207, 0.744949494949495],
+      borderColor: '#a78bfa',
+      borderWidth: 2,
+      pointBackgroundColor: ["#a78bfa99","#a78bfa99","#a78bfa99","#a78bfa99","#a78bfa99","#a78bfa99","#a78bfa99","#a78bfa99","#a78bfa99","#a78bfa99","#6366f1","#6366f1","#6366f1","#6366f1"],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 8],
+      tension: 0.35, fill: false, spanGaps: true
+    }
+    ]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{ labels:{ color:'#8b93a7', font:{size:11}, boxWidth:14, padding:16 } },
+      tooltip:{ backgroundColor:'#1a1d27', borderColor:'#2e3347', borderWidth:1,
+                callbacks:{ label: ctx => fmtPct0(ctx.raw) } }
+    },
+    scales:{
+      x:{ ticks:{ color:'#8b93a7', font:{size:10} }, grid:{ color:'#2e3347' } },
+      y:{ ticks:{ color:'#8b93a7', font:{size:10}, callback: v => fmtPct0(v) },
+           grid:{ color:'#2e3347' } }
+    }
+  }
+});
+new Chart(document.getElementById('acc0_cpc'), {
+  type:'line',
+  data:{
+    labels:["22/05", "23/05", "24/05", "25/05", "26/05", "27/05", "28/05", "29/05", "30/05", "31/05", "01/06", "02/06", "03/06", "04/06"],
+    datasets:[
+      
+    { label:'UCL',   data:Array(14).fill(8.6339),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+    { label:'Média', data:Array(14).fill(6.0529), borderColor:'#6b7280', borderDash:[3,3], borderWidth:1,   pointRadius:0, fill:false },
+    { label:'LCL',   data:Array(14).fill(3.472),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+      {
+      label: 'CPC Link(R$)',
+      data: [6.760599999999999, 6.381052631578948, 8.30757281553398, 2.5082851985559564, 3.788246251703771, 5.099935170178282, 5.715853413654618, 7.620291153415454, 7.513108808290156, 6.8343426724137935, 7.741339421613395, 4.302377701934016, 8.071034063260342, 9.733559322033898],
+      borderColor: '#f97316',
+      borderWidth: 2,
+      pointBackgroundColor: ["#f9731699","#f9731699","#f9731699","#f9731699","#f9731699","#f9731699","#f9731699","#f9731699","#f9731699","#f9731699","#6366f1","#6366f1","#6366f1","#6366f1"],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 8],
+      tension: 0.35, fill: false, spanGaps: true
+    }
+    ]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{ labels:{ color:'#8b93a7', font:{size:11}, boxWidth:14, padding:16 } },
+      tooltip:{ backgroundColor:'#1a1d27', borderColor:'#2e3347', borderWidth:1,
+                callbacks:{ label: ctx => fmtBrl0(ctx.raw) } }
+    },
+    scales:{
+      x:{ ticks:{ color:'#8b93a7', font:{size:10} }, grid:{ color:'#2e3347' } },
+      y:{ ticks:{ color:'#8b93a7', font:{size:10}, callback: v => fmtBrl0(v) },
+           grid:{ color:'#2e3347' } }
+    }
+  }
+});
+new Chart(document.getElementById('acc0_invest'), {
+  type:'line',
+  data:{
+    labels:["22/05", "23/05", "24/05", "25/05", "26/05", "27/05", "28/05", "29/05", "30/05", "31/05", "01/06", "02/06", "03/06", "04/06"],
+    datasets:[
+      
+    { label:'UCL',   data:Array(14).fill(8311.3868),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+    { label:'Média', data:Array(14).fill(4207.649), borderColor:'#6b7280', borderDash:[3,3], borderWidth:1,   pointRadius:0, fill:false },
+    { label:'LCL',   data:Array(14).fill(103.9112),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+      {
+      label: 'Invest/Dia',
+      data: [676.06, 1333.64, 855.68, 1389.59, 8337.93, 6293.32, 5692.99, 6804.92, 4350.09, 6342.27, 5086.06, 7563.58, 6634.39, 3445.68],
+      borderColor: '#10b981',
+      borderWidth: 2,
+      pointBackgroundColor: ["#10b98199","#10b98199","#10b98199","#10b98199","#10b98199","#10b98199","#10b98199","#10b98199","#10b98199","#10b98199","#6366f1","#6366f1","#6366f1","#6366f1"],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 8],
+      tension: 0.35, fill: false, spanGaps: true
+    }
+    ]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{ labels:{ color:'#8b93a7', font:{size:11}, boxWidth:14, padding:16 } },
+      tooltip:{ backgroundColor:'#1a1d27', borderColor:'#2e3347', borderWidth:1,
+                callbacks:{ label: ctx => fmtBrl00(ctx.raw) } }
+    },
+    scales:{
+      x:{ ticks:{ color:'#8b93a7', font:{size:10} }, grid:{ color:'#2e3347' } },
+      y:{ ticks:{ color:'#8b93a7', font:{size:10}, callback: v => fmtBrl00(v) },
+           grid:{ color:'#2e3347' } }
+    }
+  }
+});
+
+// Charts — Outlet Cachoeirinha
+const fmtBrl1  = v => 'R$' + v.toFixed(2);
+const fmtPct1  = v => v.toFixed(2)+'%';
+const fmtBrl01 = v => 'R$' + Math.round(v).toLocaleString('pt-BR');
+new Chart(document.getElementById('acc1_cpm'), {
+  type:'line',
+  data:{
+    labels:["04/05", "05/05", "01/06", "02/06", "03/06"],
+    datasets:[
+      
+    { label:'UCL',   data:Array(5).fill(24.4796),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+    { label:'Média', data:Array(5).fill(18.8304), borderColor:'#6b7280', borderDash:[3,3], borderWidth:1,   pointRadius:0, fill:false },
+    { label:'LCL',   data:Array(5).fill(13.1813),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+      {
+      label: 'CPM (R$)',
+      data: [16.1568909679741, 21.5039782650883, 61.42655367231638, 41.98743955982882, 38.11868792254403],
+      borderColor: '#34d399',
+      borderWidth: 2,
+      pointBackgroundColor: ["#34d39999","#34d39999","#0891b2","#0891b2","#0891b2"],
+      pointRadius: [4, 4, 5, 5, 8],
+      tension: 0.35, fill: false, spanGaps: true
+    }
+    ]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{ labels:{ color:'#8b93a7', font:{size:11}, boxWidth:14, padding:16 } },
+      tooltip:{ backgroundColor:'#1a1d27', borderColor:'#2e3347', borderWidth:1,
+                callbacks:{ label: ctx => fmtBrl1(ctx.raw) } }
+    },
+    scales:{
+      x:{ ticks:{ color:'#8b93a7', font:{size:10} }, grid:{ color:'#2e3347' } },
+      y:{ ticks:{ color:'#8b93a7', font:{size:10}, callback: v => fmtBrl1(v) },
+           grid:{ color:'#2e3347' } }
+    }
+  }
+});
+new Chart(document.getElementById('acc1_ctr'), {
+  type:'line',
+  data:{
+    labels:["04/05", "05/05", "01/06", "02/06", "03/06"],
+    datasets:[
+      
+    { label:'UCL',   data:Array(5).fill(1.6608),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+    { label:'Média', data:Array(5).fill(1.2775), borderColor:'#6b7280', borderDash:[3,3], borderWidth:1,   pointRadius:0, fill:false },
+    { label:'LCL',   data:Array(5).fill(0.8943),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+      {
+      label: 'CTR (%)',
+      data: [1.23545639918436, 1.31961963904522, 2.0903954802259888, 1.2504863002278659, 1.519071863784325],
+      borderColor: '#a78bfa',
+      borderWidth: 2,
+      pointBackgroundColor: ["#a78bfa99","#a78bfa99","#0891b2","#0891b2","#0891b2"],
+      pointRadius: [4, 4, 5, 5, 8],
+      tension: 0.35, fill: false, spanGaps: true
+    }
+    ]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{ labels:{ color:'#8b93a7', font:{size:11}, boxWidth:14, padding:16 } },
+      tooltip:{ backgroundColor:'#1a1d27', borderColor:'#2e3347', borderWidth:1,
+                callbacks:{ label: ctx => fmtPct1(ctx.raw) } }
+    },
+    scales:{
+      x:{ ticks:{ color:'#8b93a7', font:{size:10} }, grid:{ color:'#2e3347' } },
+      y:{ ticks:{ color:'#8b93a7', font:{size:10}, callback: v => fmtPct1(v) },
+           grid:{ color:'#2e3347' } }
+    }
+  }
+});
+new Chart(document.getElementById('acc1_cpc'), {
+  type:'line',
+  data:{
+    labels:["04/05", "05/05", "01/06", "02/06", "03/06"],
+    datasets:[
+      
+    { label:'UCL',   data:Array(5).fill(1.9093),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+    { label:'Média', data:Array(5).fill(1.4687), borderColor:'#6b7280', borderDash:[3,3], borderWidth:1,   pointRadius:0, fill:false },
+    { label:'LCL',   data:Array(5).fill(1.0281),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+      {
+      label: 'CPC Link(R$)',
+      data: [1.307766990291262, 1.6295588235294118, 2.9385135135135134, 3.357688888888889, 2.5093406593406593],
+      borderColor: '#f97316',
+      borderWidth: 2,
+      pointBackgroundColor: ["#f9731699","#f9731699","#0891b2","#0891b2","#0891b2"],
+      pointRadius: [4, 4, 5, 5, 8],
+      tension: 0.35, fill: false, spanGaps: true
+    }
+    ]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{ labels:{ color:'#8b93a7', font:{size:11}, boxWidth:14, padding:16 } },
+      tooltip:{ backgroundColor:'#1a1d27', borderColor:'#2e3347', borderWidth:1,
+                callbacks:{ label: ctx => fmtBrl1(ctx.raw) } }
+    },
+    scales:{
+      x:{ ticks:{ color:'#8b93a7', font:{size:10} }, grid:{ color:'#2e3347' } },
+      y:{ ticks:{ color:'#8b93a7', font:{size:10}, callback: v => fmtBrl1(v) },
+           grid:{ color:'#2e3347' } }
+    }
+  }
+});
+new Chart(document.getElementById('acc1_invest'), {
+  type:'line',
+  data:{
+    labels:["04/05", "05/05", "01/06", "02/06", "03/06"],
+    datasets:[
+      
+    { label:'UCL',   data:Array(5).fill(159.5815),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+    { label:'Média', data:Array(5).fill(122.755), borderColor:'#6b7280', borderDash:[3,3], borderWidth:1,   pointRadius:0, fill:false },
+    { label:'LCL',   data:Array(5).fill(85.9285),  borderColor:'#f59e0b', borderDash:[5,4], borderWidth:1.5, pointRadius:0, fill:false },
+      {
+      label: 'Invest/Dia',
+      data: [134.7, 110.81, 434.9, 755.48, 456.7],
+      borderColor: '#10b981',
+      borderWidth: 2,
+      pointBackgroundColor: ["#10b98199","#10b98199","#0891b2","#0891b2","#0891b2"],
+      pointRadius: [4, 4, 5, 5, 8],
+      tension: 0.35, fill: false, spanGaps: true
+    }
+    ]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{ labels:{ color:'#8b93a7', font:{size:11}, boxWidth:14, padding:16 } },
+      tooltip:{ backgroundColor:'#1a1d27', borderColor:'#2e3347', borderWidth:1,
+                callbacks:{ label: ctx => fmtBrl01(ctx.raw) } }
+    },
+    scales:{
+      x:{ ticks:{ color:'#8b93a7', font:{size:10} }, grid:{ color:'#2e3347' } },
+      y:{ ticks:{ color:'#8b93a7', font:{size:10}, callback: v => fmtBrl01(v) },
+           grid:{ color:'#2e3347' } }
+    }
+  }
+});
+
+</script>
 </body>
 </html>
